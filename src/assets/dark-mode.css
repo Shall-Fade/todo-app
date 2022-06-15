@@ -1,0 +1,52 @@
+body {
+  background-color: var(--c-very-dark-blue);
+  color: var(--c-light-grayish-blue-d);
+}
+/* Стили формы */
+.todo-input {
+  background-color: var(--c-very-dark-desaturated-blue);
+  color: var(--c-light-grayish-blue-d);
+}
+.todo-input::placeholder {
+  color: var(--c-dark-grayish-blue-d);
+}
+/* Стили списка */
+.list-empty-description {
+  text-decoration: 2px underline var(--c-light-grayish-blue-d);
+}
+.list,
+.list-empty {
+  background-color: var(--c-very-dark-desaturated-blue);
+  box-shadow: 0 0 20px var(--c-very-dark-blue);
+}
+.list-settings {
+  color: var(--c-dark-grayish-blue-d);
+}
+.list-btn,
+.clear-btn {
+  color: var(--c-dark-grayish-blue-d);
+}
+.list-btn:hover,
+.clear-btn:hover {
+  color: var(--c-light-grayish-blue-hover);
+}
+.list-btn-active {
+  color: var(--c-bright-blue);
+}
+.list-item {
+  border-bottom: 1px solid var(--c-very-dark-grayish-blue);
+}
+/* Стили кнопки (завершения задачи) */
+.check-btn {
+  border: 1px solid var(--c-very-dark-grayish-blue);
+}
+.check-btn:hover {
+  border: 1px solid var(--c-dark-grayish-blue-d);
+}
+.check-input:checked + .check-btn {
+  background: var(--c-check-background);
+}
+/* Стиль главного заголовка */
+.theme-title {
+  color: var(--c-white);
+}

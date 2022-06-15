@@ -1,0 +1,47 @@
+body {
+  background-color: var(--c-very-light-gray);
+}
+/* Стиль формы */
+.todo-input {
+  background-color: var(--c-white);
+}
+/* Стили списка */
+.list-empty-description {
+  text-decoration: 2px underline #000;
+}
+.list,
+.list-empty {
+  background-color: #fff;
+  box-shadow: 0 0 20px #ccc;
+}
+.list-settings {
+  color: var(--c-dark-grayish-blue-l);
+}
+.list-btn,
+.clear-btn {
+  color: var(--c-dark-grayish-blue-l);
+}
+.list-btn:hover,
+.clear-btn:hover {
+  color: var(--c-very-dark-grayish-blue);
+}
+.list-btn-active {
+  color: var(--c-bright-blue);
+}
+.list-item {
+  border-bottom: 1px solid var(--c-light-grayish-blue-hover);
+}
+/* Стили кнопки (завершения задачи) */
+.check-btn {
+  border: 1px solid var(--c-light-grayish-blue-l);
+}
+.check-btn:hover {
+  border: 1px solid var(--c-dark-grayish-blue-l);
+}
+.check-input:checked + .check-btn {
+  background: var(--c-check-background);
+}
+/* Стиль главного заголовка */
+.theme-title {
+  color: var(--c-white);
+}
