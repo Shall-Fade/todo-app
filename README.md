@@ -45,7 +45,7 @@ Practiced the positioning of elements on the page. I also tried using the state 
 
 ### Continued development
 
-I can't be sure that I wrote clean code that deals with light and dark themes. In the future, I'm going to add drag and drop.
+In the future, I'm going to add drag and drop.
 
 ## Author
 
