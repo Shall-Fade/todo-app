@@ -1,13 +1,13 @@
 <template>
   <div class="header-container">
     <img
-      v-if="theme == 'light'"
+      v-if="isLight"
       class="header-img"
       src="../assets/images/bg-desktop-light.jpg"
       alt="Light"
     />
     <img
-      v-if="theme == 'dark'"
+      v-else
       class="header-img"
       src="../assets/images/bg-desktop-dark.jpg"
       alt="Dark"
@@ -21,10 +21,10 @@ import { computed } from "vue";
 export default {
   setup() {
     const store = useStore();
-    const theme = computed(() => store.state.theme);
+    const isLight = computed(() => store.state.isLight);
 
     return {
-      theme,
+      isLight,
     };
   },
 };

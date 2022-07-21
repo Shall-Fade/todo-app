@@ -4,7 +4,7 @@ const store = createStore({
   state: {
     tasks: [],
     filter: "all",
-    theme: "light",
+    isLight: true,
   },
   getters: {
     activeTasks(state) {
@@ -18,8 +18,8 @@ const store = createStore({
     ADD_FILTER(state, filter) {
       state.filter = filter;
     },
-    SWITCH_THEME(state, theme) {
-      state.theme = theme;
+    SWITCH_THEME(state, isLight) {
+      state.isLight = isLight;
     },
   },
 });

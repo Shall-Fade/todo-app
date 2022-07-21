@@ -3,13 +3,13 @@
     <h1 class="theme-title">Todo</h1>
     <button @click="switchTheme" class="theme-btn">
       <img
-        v-if="theme == 'light'"
+        v-if="isLight"
         class="theme-img"
         src="../../assets/images/icon-moon.svg"
         alt="Dark Theme"
       />
       <img
-        v-if="theme == 'dark'"
+        v-else
         class="theme-img"
         src="../../assets/images/icon-sun.svg"
         alt="Light Theme"
@@ -20,27 +20,32 @@
 
 <script>
 import { useStore } from "vuex";
-import { computed } from "vue";
+import { onMounted, computed } from "vue";
 export default {
   setup() {
     // Переменные
     const store = useStore();
-    const theme = computed(() => store.state.theme);
-    let mode = document.getElementById("mode");
+    const isLight = computed(() => store.state.isLight);
+    let currentTheme = isLight.value;
+
+    onMounted(() => {
+      document.documentElement.setAttribute("data-theme", "light");
+    });
 
     // Функция смена темы
     function switchTheme() {
-      if (theme.value == "light") {
-        store.commit("SWITCH_THEME", "dark");
-        mode.href = "./src/assets/dark-mode.css";
-      } else if (theme.value == "dark") {
-        store.commit("SWITCH_THEME", "light");
-        mode.href = "./src/assets/light-mode.css";
+      currentTheme = !isLight.value;
+      store.commit("SWITCH_THEME", currentTheme);
+
+      if (isLight.value === true) {
+        document.documentElement.setAttribute("data-theme", "light");
+      } else if (isLight.value === false) {
+        document.documentElement.setAttribute("data-theme", "dark");
       }
     }
 
     return {
-      theme,
+      isLight,
       switchTheme,
     };
   },
@@ -59,6 +64,7 @@ export default {
   font-weight: 700;
   font-size: 42px;
   letter-spacing: 7px;
+  color: #fff;
 }
 .theme-btn {
   padding: 5px;

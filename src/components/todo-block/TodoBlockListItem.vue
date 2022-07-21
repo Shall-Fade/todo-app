@@ -68,6 +68,7 @@ export default {
   width: 100%;
   padding: 20px;
   overflow: hidden;
+  border-bottom: 1px solid var(--c-item-hover);
 }
 .list-item div {
   position: relative;
@@ -84,14 +85,20 @@ export default {
   height: 25px;
   border-radius: 50%;
   cursor: pointer;
+  border: 1px solid var(--c-item-border);
   transition: 0.3s ease;
 }
 .check-task {
   margin-left: 40px;
   margin-right: 10px;
+  color: var(--c-text);
 }
 .check-btn:hover {
+  border: 1px solid var(--c-item-border);
   transition: 0.3s ease;
+}
+.check-input:checked + .check-btn {
+  background: var(--c-check-background);
 }
 .check-input:checked + .check-btn::before {
   content: "";

@@ -93,6 +93,10 @@ export default {
 </script>
 
 <style scoped>
+.list-section {
+  box-shadow: 0 0 3px var(--c-item-border);
+  border-radius: 5px;
+}
 .list-empty {
   width: 100%;
   height: 250px;
@@ -100,6 +104,7 @@ export default {
   align-items: center;
   justify-content: space-evenly;
   flex-direction: column;
+  color: var(--c-text);
 }
 .list-empty-title,
 .list-empty-emotion {
@@ -108,11 +113,13 @@ export default {
 }
 .list-empty-description {
   font-size: 24px;
+  text-decoration: 2px underline var(--c-text);
 }
 .list,
 .list-empty {
   list-style: none;
   border-radius: 5px;
+  background-color: var(--c-background-elements);
 }
 .list-settings {
   display: flex;
@@ -120,6 +127,7 @@ export default {
   justify-content: space-between;
   padding: 20px;
   font-size: 15px;
+  color: var(--c-text-filter);
 }
 .list-btn {
   margin: 0 5px;
@@ -131,6 +139,14 @@ export default {
   font-family: "Josefin Sans", sans-serif;
   font-size: 15px;
   transition: 0.3s ease;
+  color: var(--c-text-filter);
+}
+.list-btn:hover,
+.clear-btn:hover {
+  color: var(--c-text-filter-hover);
+}
+.list-btn-active {
+  color: var(--c-active);
 }
 @media only screen and (max-width: 425px) {
   .list-settings {
